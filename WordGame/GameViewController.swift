@@ -109,6 +109,9 @@ extension GameViewController: UITableViewDelegate, UITableViewDataSource, Handle
     }
     
     func deleteKey() {
+        if characterCount > 0 {
+            characterCount = characterCount - 1
+        }
         switch(characterCount) {
         case 0:
             data[attemptCount - 1].character0 = ""
@@ -122,9 +125,6 @@ extension GameViewController: UITableViewDelegate, UITableViewDataSource, Handle
             data[attemptCount - 1].character4 = ""
         default:
             break
-        }
-        if characterCount > 0 {
-            characterCount = characterCount - 1
         }
         wordTableView.reloadData()
         print(self.characterCount)
