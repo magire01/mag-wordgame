@@ -26,6 +26,7 @@
 		59481716288C88FE0061049B /* Keyboard2Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59481714288C88FE0061049B /* Keyboard2Cell.xib */; };
 		59481719288C8C930061049B /* Keyboard3Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59481717288C8C930061049B /* Keyboard3Cell.swift */; };
 		5948171A288C8C930061049B /* Keyboard3Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59481718288C8C930061049B /* Keyboard3Cell.xib */; };
+		5955DBF1288DBB400083A8BC /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5955DBF0288DBB400083A8BC /* CharacterModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		59481714288C88FE0061049B /* Keyboard2Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Keyboard2Cell.xib; sourceTree = "<group>"; };
 		59481717288C8C930061049B /* Keyboard3Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard3Cell.swift; sourceTree = "<group>"; };
 		59481718288C8C930061049B /* Keyboard3Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Keyboard3Cell.xib; sourceTree = "<group>"; };
+		5955DBF0288DBB400083A8BC /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 				594816DD288C47D90061049B /* LaunchScreen.storyboard */,
 				594816E0288C47D90061049B /* Info.plist */,
 				594816D8288C47D70061049B /* WordGame.xcdatamodeld */,
+				5955DBF0288DBB400083A8BC /* CharacterModel.swift */,
 			);
 			path = WordGame;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				59481719288C8C930061049B /* Keyboard3Cell.swift in Sources */,
+				5955DBF1288DBB400083A8BC /* CharacterModel.swift in Sources */,
 				59481705288C4AAE0061049B /* GameViewController.swift in Sources */,
 				59481715288C88FE0061049B /* Keyboard2Cell.swift in Sources */,
 				594816D4288C47D70061049B /* ViewController.swift in Sources */,

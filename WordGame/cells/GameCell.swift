@@ -14,7 +14,33 @@ class GameCell: UITableViewCell {
     @IBOutlet weak var fourthCharLabel: UILabel!
     @IBOutlet weak var fifthCharLabel: UILabel!
     
-    var blank: String = "-"
+    var blank: String = ""
+    
+    var firstChar: String? {
+          didSet {
+              firstCharLabel.text = firstChar
+          }
+     }
+    var secondChar: String? {
+          didSet {
+              secondCharLabel.text = secondChar
+          }
+     }
+    var thirdChar: String? {
+          didSet {
+              thirdCharLabel.text = thirdChar
+          }
+     }
+    var fourthChar: String? {
+          didSet {
+              fourthCharLabel.text = fourthChar
+          }
+     }
+    var fifthChar: String? {
+          didSet {
+              fifthCharLabel.text = fifthChar
+          }
+     }
     
     override func awakeFromNib() {
         super.awakeFromNib()

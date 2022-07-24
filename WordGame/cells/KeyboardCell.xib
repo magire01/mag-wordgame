@@ -23,51 +23,81 @@
                                 <rect key="frame" x="0.0" y="0.0" width="32" height="24.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Q" buttonSize="small"/>
+                                <connections>
+                                    <action selector="qPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Ukz-w8-EtZ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hBL-7O-puY">
                                 <rect key="frame" x="32" y="0.0" width="32" height="24.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="W" buttonSize="small"/>
+                                <connections>
+                                    <action selector="wPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="KdI-gu-VYa"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pgl-uH-teH">
                                 <rect key="frame" x="64" y="0.0" width="32" height="24.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="E" buttonSize="small"/>
+                                <connections>
+                                    <action selector="ePressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Ro2-3q-snH"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q90-Y0-EgF">
                                 <rect key="frame" x="96" y="0.0" width="32" height="24.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="R" buttonSize="small"/>
+                                <connections>
+                                    <action selector="rPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="3TS-PS-UFw"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qxn-Id-lK3">
                                 <rect key="frame" x="128" y="0.0" width="32" height="24.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="T" buttonSize="small"/>
+                                <connections>
+                                    <action selector="tPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="W4j-VC-Um9"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2AR-Rx-CkC">
                                 <rect key="frame" x="160" y="0.0" width="32" height="24.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Y" buttonSize="small"/>
+                                <connections>
+                                    <action selector="yPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="wdO-be-eY5"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y7K-vV-NbJ">
                                 <rect key="frame" x="192" y="0.0" width="32" height="24.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="U" buttonSize="small"/>
+                                <connections>
+                                    <action selector="uPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="qO2-xQ-2BH"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FA3-St-8Ho">
                                 <rect key="frame" x="224" y="0.0" width="32" height="24.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="I" buttonSize="small"/>
+                                <connections>
+                                    <action selector="iPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="RDi-iZ-bPw"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="25K-fN-ulG">
                                 <rect key="frame" x="256" y="0.0" width="32" height="24.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="O" buttonSize="small"/>
+                                <connections>
+                                    <action selector="oPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="edf-Uj-SZb"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JCe-gX-G4b">
                                 <rect key="frame" x="288" y="0.0" width="32" height="24.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="P" buttonSize="small"/>
+                                <connections>
+                                    <action selector="pPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="pOR-cg-KoV"/>
+                                </connections>
                             </button>
                         </subviews>
                     </stackView>

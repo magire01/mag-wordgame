@@ -16,51 +16,70 @@
                 <rect key="frame" x="0.0" y="0.0" width="331" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="center" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="zMw-UY-6yL">
-                        <rect key="frame" x="59" y="10" width="213.5" height="24.5"/>
+                    <stackView opaque="NO" contentMode="center" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="zMw-UY-6yL">
+                        <rect key="frame" x="20" y="10" width="291" height="24.5"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SSL-5I-eTi">
+                                <rect key="frame" x="0.0" y="0.0" width="29.5" height="24.5"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="&lt;" buttonSize="small"/>
+                                <connections>
+                                    <action selector="deleteTextTouched:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="EgA-hr-YKL"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q5l-RA-3IC">
-                                <rect key="frame" x="0.0" y="0.0" width="30.5" height="24.5"/>
+                                <rect key="frame" x="32.5" y="0.0" width="30" height="24.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Z" buttonSize="small"/>
+                                <connections>
+                                    <action selector="zPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="MtL-OS-DCv"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CHV-Wl-Cng">
-                                <rect key="frame" x="30.5" y="0.0" width="30.5" height="24.5"/>
+                                <rect key="frame" x="65.5" y="0.0" width="29.5" height="24.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="X" buttonSize="small"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="22x-SV-Tzb">
-                                <rect key="frame" x="61" y="0.0" width="30.5" height="24.5"/>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="22x-SV-Tzb">
+                                <rect key="frame" x="98" y="0.0" width="29.5" height="24.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="C" buttonSize="small"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8tq-GO-7pe">
-                                <rect key="frame" x="91.5" y="0.0" width="30.5" height="24.5"/>
+                                <rect key="frame" x="130.5" y="0.0" width="30" height="24.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="v" buttonSize="small"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uz6-7C-OQ3">
-                                <rect key="frame" x="122" y="0.0" width="30.5" height="24.5"/>
+                                <rect key="frame" x="163.5" y="0.0" width="29.5" height="24.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="B" buttonSize="small"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vvo-ld-dT9">
-                                <rect key="frame" x="152.5" y="0.0" width="30.5" height="24.5"/>
+                                <rect key="frame" x="196" y="0.0" width="29.5" height="24.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="N" buttonSize="small"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z4j-Hs-ivc">
-                                <rect key="frame" x="183" y="0.0" width="30.5" height="24.5"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z4j-Hs-ivc">
+                                <rect key="frame" x="228.5" y="0.0" width="30" height="24.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="M" buttonSize="small"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MbX-l7-efn">
+                                <rect key="frame" x="261.5" y="0.0" width="29.5" height="24.5"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="&gt;" buttonSize="mini"/>
+                                <connections>
+                                    <action selector="submitButtonTouched:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="JYK-CJ-u3t"/>
+                                </connections>
                             </button>
                         </subviews>
                     </stackView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="zMw-UY-6yL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="FFi-Dg-Sca"/>
-                    <constraint firstAttribute="trailing" secondItem="zMw-UY-6yL" secondAttribute="trailing" constant="58.5" id="Q2Y-4W-gaI"/>
-                    <constraint firstItem="zMw-UY-6yL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="59" id="ccI-u7-BJD"/>
+                    <constraint firstAttribute="trailing" secondItem="zMw-UY-6yL" secondAttribute="trailing" constant="20" id="Q2Y-4W-gaI"/>
+                    <constraint firstItem="zMw-UY-6yL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="ccI-u7-BJD"/>
                     <constraint firstAttribute="bottom" secondItem="zMw-UY-6yL" secondAttribute="bottom" constant="9.5" id="o2s-lv-ud8"/>
                 </constraints>
             </tableViewCellContentView>
