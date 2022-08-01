@@ -42,7 +42,7 @@ class GameViewController: UIViewController {
             CharacterModel.CharacterValue(value: "", color: "")])
     ]
     
-    var question = "werty".map { String($0) }
+    var question = "retry".map { String($0) }
     var answer: [String] = []
     var isCorrect: Bool = false
     
@@ -109,17 +109,11 @@ extension GameViewController: UITableViewDelegate, UITableViewDataSource, Handle
         }
     }
     
-    private func handleCharacter(questionCount: Int, letter: String) {
-            data[attemptCount].word[questionCount].value = letter
-    }
-    
     func updateKeyboard1(with letter: String) {
         if characterCount < 5 {
-            handleCharacter(questionCount: characterCount, letter: letter)
+            data[attemptCount].word[characterCount].value = letter
             characterCount = characterCount + 1
             answer.append(letter.lowercased())
-            print(data[0])
-            print(answer)
             wordTableView.reloadData()
         }
     }
@@ -129,7 +123,8 @@ extension GameViewController: UITableViewDelegate, UITableViewDataSource, Handle
             characterCount -= 1
             data[attemptCount].word[characterCount].value = ""
             answer.remove(at: characterCount)
-            wordTableView.reloadData()
+            let indexPosition = IndexPath(item: attemptCount, section: 0)
+            wordTableView.reloadRows(at: [indexPosition], with: .none)
         }
         
     }
@@ -139,25 +134,7 @@ extension GameViewController: UITableViewDelegate, UITableViewDataSource, Handle
             compareAnswer()
             answer = []
             characterCount = 0
-            if !isCorrect {
-                if attemptCount == 5 {
-                    print("loser")
-                }
-                attemptCount = attemptCount + 1
-            } else {
-                //pop win alert
-                let winAlert = UIAlertController(title: "Nice One!", message: "You Win!", preferredStyle: .alert)
-                let playAgain = UIAlertAction(title: "Play Again", style: .default, handler:  { (action) -> Void in
-                    self.restartGame()
-                 })
-                let quit = UIAlertAction(title: "Quit", style: .destructive, handler: { (action) -> Void in
-                    self.dismiss(animated: true, completion: nil)
-                })
-                winAlert.addAction(playAgain)
-                winAlert.addAction(quit)
-                self.present(winAlert, animated: true, completion: nil)
-            }
-            wordTableView.reloadData()
+            completeGame()
         }
     }
     
@@ -166,13 +143,40 @@ extension GameViewController: UITableViewDelegate, UITableViewDataSource, Handle
             if answer[i] == question[i] {
                 data[attemptCount].word[i].color = "green"
                 isCorrect = true
-                print(answer[i])
-            } else {
+            } else  if question.contains(answer[i]) {
+                data[attemptCount].word[i].color = "yellow"
                 isCorrect = false
+                print(answer[i])
+            } else if !question.contains(answer[i]) {
+                data[attemptCount].word[i].color = "red"
+                isCorrect = false
+            } else {
+                data[attemptCount].word[i].color = "black"
             }
         }
-        print("isCorrect: \(isCorrect)")
-        
+    }
+    
+    private func completeGame() {
+        if !isCorrect {
+            if attemptCount == 5 {
+                print("loser")
+            }
+            let indexPosition = IndexPath(item: attemptCount, section: 0)
+            wordTableView.reloadRows(at: [indexPosition], with: .none)
+            attemptCount = attemptCount + 1
+        } else {
+            //pop win alert
+            let winAlert = UIAlertController(title: "Nice One!", message: "You Win!", preferredStyle: .alert)
+            let playAgain = UIAlertAction(title: "Play Again", style: .default, handler:  { (action) -> Void in
+                self.restartGame()
+             })
+            let quit = UIAlertAction(title: "Quit", style: .destructive, handler: { (action) -> Void in
+                self.dismiss(animated: true, completion: nil)
+            })
+            winAlert.addAction(playAgain)
+            winAlert.addAction(quit)
+            self.present(winAlert, animated: true, completion: nil)
+        }
     }
     
     private func restartGame() {

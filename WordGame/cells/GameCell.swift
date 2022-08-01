@@ -71,30 +71,14 @@ class GameCell: UITableViewCell {
           }
      }
     
-//    func setColor(characterCount: Int ,color: UIColor) {
-//        switch(characterCount) {
-//        case 0:
-//            firstCharLabel.textColor = color
-//        case 1:
-//            secondCharLabel.textColor = color
-//        case 2:
-//            thirdCharLabel.textColor = color
-//        case 3:
-//            fourthCharLabel.textColor = color
-//        case 4:
-//            secondCharLabel.textColor = color
-//        default:
-//            firstCharLabel.textColor = .black
-//        }
-//
-//    }
-    
     func setColor(colorString: String) -> UIColor {
         switch(colorString) {
         case "green":
             return .green
         case "yellow":
             return .yellow
+        case "red":
+            return .red
         default:
             return .black
         }
@@ -108,7 +92,6 @@ class GameCell: UITableViewCell {
         fourthCharLabel.text = blank
         fifthCharLabel.text = blank
         
-        print("Print test \(setColor(colorString: "green"))")
         firstCharLabel.textColor = setColor(colorString: char0Color ?? "black")
         secondCharLabel.textColor = setColor(colorString: char1Color ?? "black")
         thirdCharLabel.textColor = setColor(colorString: char2Color ?? "black")
