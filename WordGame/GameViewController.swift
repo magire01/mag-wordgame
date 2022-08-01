@@ -10,24 +10,49 @@ import UIKit
 class GameViewController: UIViewController {
     
     var data = [
-        CharacterModel(character0: "", character1: "", character2: "", character3: "", character4: ""),
-        CharacterModel(character0: "", character1: "", character2: "", character3: "", character4: ""),
-        CharacterModel(character0: "", character1: "", character2: "", character3: "", character4: ""),
-        CharacterModel(character0: "", character1: "", character2: "", character3: "", character4: ""),
-        CharacterModel(character0: "", character1: "", character2: "", character3: "", character4: "")
+        CharacterModel.WordAttempt.init(word: [
+            CharacterModel.CharacterValue(value: "", color: ""),
+            CharacterModel.CharacterValue(value: "", color: ""),
+            CharacterModel.CharacterValue(value: "", color: ""),
+            CharacterModel.CharacterValue(value: "", color: ""),
+            CharacterModel.CharacterValue(value: "", color: "")]),
+        CharacterModel.WordAttempt.init(word: [
+            CharacterModel.CharacterValue(value: "", color: ""),
+            CharacterModel.CharacterValue(value: "", color: ""),
+            CharacterModel.CharacterValue(value: "", color: ""),
+            CharacterModel.CharacterValue(value: "", color: ""),
+            CharacterModel.CharacterValue(value: "", color: "")]),
+        CharacterModel.WordAttempt.init(word: [
+            CharacterModel.CharacterValue(value: "", color: ""),
+            CharacterModel.CharacterValue(value: "", color: ""),
+            CharacterModel.CharacterValue(value: "", color: ""),
+            CharacterModel.CharacterValue(value: "", color: ""),
+            CharacterModel.CharacterValue(value: "", color: "")]),
+        CharacterModel.WordAttempt.init(word: [
+            CharacterModel.CharacterValue(value: "", color: ""),
+            CharacterModel.CharacterValue(value: "", color: ""),
+            CharacterModel.CharacterValue(value: "", color: ""),
+            CharacterModel.CharacterValue(value: "", color: ""),
+            CharacterModel.CharacterValue(value: "", color: "")]),
+        CharacterModel.WordAttempt.init(word: [
+            CharacterModel.CharacterValue(value: "", color: ""),
+            CharacterModel.CharacterValue(value: "", color: ""),
+            CharacterModel.CharacterValue(value: "", color: ""),
+            CharacterModel.CharacterValue(value: "", color: ""),
+            CharacterModel.CharacterValue(value: "", color: "")])
     ]
     
-    var question: String = "werty"
-    var answer: String = ""
+    var question = "werty".map { String($0) }
+    var answer: [String] = []
+    var isCorrect: Bool = false
     
     var characterCount: Int = 0
     
-    var attemptCount: Int = 1
+    var attemptCount: Int = 0
 
     
     @IBOutlet weak var wordTableView: UITableView!
     @IBOutlet weak var keyboardTableView: UITableView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,15 +66,13 @@ class GameViewController: UIViewController {
         keyboardTableView.register(UINib(nibName: "KeyboardCell", bundle: nil), forCellReuseIdentifier: "KeyboardCell")
         keyboardTableView.register(UINib(nibName: "Keyboard2Cell", bundle: nil), forCellReuseIdentifier: "Keyboard2Cell")
         keyboardTableView.register(UINib(nibName: "Keyboard3Cell", bundle: nil), forCellReuseIdentifier: "Keyboard3Cell")
-        
-        
     }
 }
 
 extension GameViewController: UITableViewDelegate, UITableViewDataSource, HandleKeyboard1Delegate, HandleKeyboard3Delegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == wordTableView {
-            return attemptCount
+            return attemptCount + 1
         } else {
             return 3
         }
@@ -58,12 +81,16 @@ extension GameViewController: UITableViewDelegate, UITableViewDataSource, Handle
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if tableView == wordTableView {
             let cell = wordTableView.dequeueReusableCell(withIdentifier: "GameCell") as! GameCell
-            cell.firstChar = data[indexPath.row].character0
-            cell.secondChar = data[indexPath.row].character1
-            cell.thirdChar = data[indexPath.row].character2
-            cell.fourthChar = data[indexPath.row].character3
-            cell.fifthChar = data[indexPath.row].character4
-            
+            cell.char0Value = data[indexPath.row].word[0].value
+            cell.char1Value = data[indexPath.row].word[1].value
+            cell.char2Value = data[indexPath.row].word[2].value
+            cell.char3Value = data[indexPath.row].word[3].value
+            cell.char4Value = data[indexPath.row].word[4].value
+            cell.char0Color = data[indexPath.row].word[0].color
+            cell.char1Color = data[indexPath.row].word[1].color
+            cell.char2Color = data[indexPath.row].word[2].color
+            cell.char3Color = data[indexPath.row].word[3].color
+            cell.char4Color = data[indexPath.row].word[4].color
             return cell
 
         } else {
@@ -79,68 +106,111 @@ extension GameViewController: UITableViewDelegate, UITableViewDataSource, Handle
                 cell.delegate = self
                 return cell
             }
-            
         }
     }
     
     private func handleCharacter(questionCount: Int, letter: String) {
-        switch (characterCount) {
-        case 0:
-            data[attemptCount - 1].character0 = letter
-        case 1:
-            data[attemptCount - 1].character1 = letter
-        case 2:
-            data[attemptCount - 1].character2 = letter
-        case 3:
-            data[attemptCount - 1].character3 = letter
-        case 4:
-            data[attemptCount - 1].character4 = letter
-        default:
-            break
-            
-        }
-        wordTableView.reloadData()
+            data[attemptCount].word[questionCount].value = letter
     }
     
     func updateKeyboard1(with letter: String) {
-        handleCharacter(questionCount: characterCount, letter: letter)
-        characterCount = characterCount + 1
-        answer = answer + letter
+        if characterCount < 5 {
+            handleCharacter(questionCount: characterCount, letter: letter)
+            characterCount = characterCount + 1
+            answer.append(letter.lowercased())
+            print(data[0])
+            print(answer)
+            wordTableView.reloadData()
+        }
     }
     
     func deleteKey() {
         if characterCount > 0 {
-            characterCount = characterCount - 1
+            characterCount -= 1
+            data[attemptCount].word[characterCount].value = ""
+            answer.remove(at: characterCount)
+            wordTableView.reloadData()
         }
-        switch(characterCount) {
-        case 0:
-            data[attemptCount - 1].character0 = ""
-        case 1:
-            data[attemptCount - 1].character1 = ""
-        case 2:
-            data[attemptCount - 1].character2 = ""
-        case 3:
-            data[attemptCount - 1].character3 = ""
-        case 4:
-            data[attemptCount - 1].character4 = ""
-        default:
-            break
-        }
-        wordTableView.reloadData()
-        print(self.characterCount)
         
     }
     
     func submitKey() {
-        if question == answer.lowercased() {
-            print("you win")
-        } else {
-            attemptCount = attemptCount + 1
-            answer = ""
+        if characterCount == 5 {
+            compareAnswer()
+            answer = []
             characterCount = 0
+            if !isCorrect {
+                if attemptCount == 5 {
+                    print("loser")
+                }
+                attemptCount = attemptCount + 1
+            } else {
+                //pop win alert
+                let winAlert = UIAlertController(title: "Nice One!", message: "You Win!", preferredStyle: .alert)
+                let playAgain = UIAlertAction(title: "Play Again", style: .default, handler:  { (action) -> Void in
+                    self.restartGame()
+                 })
+                let quit = UIAlertAction(title: "Quit", style: .destructive, handler: { (action) -> Void in
+                    self.dismiss(animated: true, completion: nil)
+                })
+                winAlert.addAction(playAgain)
+                winAlert.addAction(quit)
+                self.present(winAlert, animated: true, completion: nil)
+            }
+            wordTableView.reloadData()
         }
-        print(answer.lowercased())
+    }
+    
+    private func compareAnswer() {
+        for i in 0...answer.count - 1  {
+            if answer[i] == question[i] {
+                data[attemptCount].word[i].color = "green"
+                isCorrect = true
+                print(answer[i])
+            } else {
+                isCorrect = false
+            }
+        }
+        print("isCorrect: \(isCorrect)")
         
+    }
+    
+    private func restartGame() {
+        answer = []
+        characterCount = 0
+        attemptCount = 0
+        data = [
+            CharacterModel.WordAttempt.init(word: [
+                CharacterModel.CharacterValue(value: "", color: ""),
+                CharacterModel.CharacterValue(value: "", color: ""),
+                CharacterModel.CharacterValue(value: "", color: ""),
+                CharacterModel.CharacterValue(value: "", color: ""),
+                CharacterModel.CharacterValue(value: "", color: "")]),
+            CharacterModel.WordAttempt.init(word: [
+                CharacterModel.CharacterValue(value: "", color: ""),
+                CharacterModel.CharacterValue(value: "", color: ""),
+                CharacterModel.CharacterValue(value: "", color: ""),
+                CharacterModel.CharacterValue(value: "", color: ""),
+                CharacterModel.CharacterValue(value: "", color: "")]),
+            CharacterModel.WordAttempt.init(word: [
+                CharacterModel.CharacterValue(value: "", color: ""),
+                CharacterModel.CharacterValue(value: "", color: ""),
+                CharacterModel.CharacterValue(value: "", color: ""),
+                CharacterModel.CharacterValue(value: "", color: ""),
+                CharacterModel.CharacterValue(value: "", color: "")]),
+            CharacterModel.WordAttempt.init(word: [
+                CharacterModel.CharacterValue(value: "", color: ""),
+                CharacterModel.CharacterValue(value: "", color: ""),
+                CharacterModel.CharacterValue(value: "", color: ""),
+                CharacterModel.CharacterValue(value: "", color: ""),
+                CharacterModel.CharacterValue(value: "", color: "")]),
+            CharacterModel.WordAttempt.init(word: [
+                CharacterModel.CharacterValue(value: "", color: ""),
+                CharacterModel.CharacterValue(value: "", color: ""),
+                CharacterModel.CharacterValue(value: "", color: ""),
+                CharacterModel.CharacterValue(value: "", color: ""),
+                CharacterModel.CharacterValue(value: "", color: "")])
+        ]
         wordTableView.reloadData()
     }
 }

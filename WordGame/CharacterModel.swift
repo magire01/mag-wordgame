@@ -8,10 +8,15 @@
 import Foundation
 
 struct CharacterModel: Codable {
-    var character0: String = ""
-    var character1: String = ""
-    var character2: String = ""
-    var character3: String = ""
-    var character4: String = ""
-
+    var attempt: [WordAttempt]
+    
+    struct WordAttempt: Codable {
+        var word: [CharacterValue]
+    }
+    
+    struct CharacterValue: Codable {
+        var value: String
+        var color: String
+    }
+        
 }

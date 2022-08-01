@@ -22,8 +22,7 @@ class KeyboardCell: UITableViewCell {
     @IBAction func wPressed(_ sender: Any) {
         handleLetter(letter: "W")
     }
-    
-    
+
     @IBAction func ePressed(_ sender: Any) {
         handleLetter(letter: "E")
     }
