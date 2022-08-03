@@ -44,13 +44,11 @@ class GameViewController: UIViewController {
     
     var question = "retry".map { String($0) }
     var answer: [String] = []
+
     var isCorrect: Bool = false
-    
     var characterCount: Int = 0
-    
     var attemptCount: Int = 0
 
-    
     @IBOutlet weak var wordTableView: UITableView!
     @IBOutlet weak var keyboardTableView: UITableView!
     
@@ -92,11 +90,12 @@ extension GameViewController: UITableViewDelegate, UITableViewDataSource, Handle
             cell.char3Color = data[indexPath.row].word[3].color
             cell.char4Color = data[indexPath.row].word[4].color
             return cell
-
         } else {
             if indexPath.row == 0 {
                 let cell = keyboardTableView.dequeueReusableCell(withIdentifier: "KeyboardCell") as! KeyboardCell
                 cell.delegate = self
+                cell.qButtonColor = "red"
+                cell.wButtonColor = "yellow"
                 return cell
             } else if indexPath.row == 1 {
                 let cell = keyboardTableView.dequeueReusableCell(withIdentifier: "Keyboard2Cell") as! Keyboard2Cell
@@ -114,8 +113,13 @@ extension GameViewController: UITableViewDelegate, UITableViewDataSource, Handle
             data[attemptCount].word[characterCount].value = letter
             characterCount = characterCount + 1
             answer.append(letter.lowercased())
-            wordTableView.reloadData()
+            refreshRow()
         }
+    }
+    
+    func refreshRow() {
+        let indexPosition = IndexPath(item: attemptCount, section: 0)
+        wordTableView.reloadRows(at: [indexPosition], with: .fade)
     }
     
     func deleteKey() {
@@ -123,10 +127,8 @@ extension GameViewController: UITableViewDelegate, UITableViewDataSource, Handle
             characterCount -= 1
             data[attemptCount].word[characterCount].value = ""
             answer.remove(at: characterCount)
-            let indexPosition = IndexPath(item: attemptCount, section: 0)
-            wordTableView.reloadRows(at: [indexPosition], with: .none)
+            refreshRow()
         }
-        
     }
     
     func submitKey() {
@@ -134,6 +136,7 @@ extension GameViewController: UITableViewDelegate, UITableViewDataSource, Handle
             compareAnswer()
             answer = []
             characterCount = 0
+            refreshRow()
             completeGame()
         }
     }
@@ -142,16 +145,21 @@ extension GameViewController: UITableViewDelegate, UITableViewDataSource, Handle
         for i in 0...answer.count - 1  {
             if answer[i] == question[i] {
                 data[attemptCount].word[i].color = "green"
-                isCorrect = true
             } else  if question.contains(answer[i]) {
                 data[attemptCount].word[i].color = "yellow"
-                isCorrect = false
-                print(answer[i])
             } else if !question.contains(answer[i]) {
                 data[attemptCount].word[i].color = "red"
-                isCorrect = false
             } else {
                 data[attemptCount].word[i].color = "black"
+            }
+        }
+        
+        for i in 0...answer.count - 1  {
+            if answer[i] == question[i] {
+                isCorrect = true
+            } else {
+                isCorrect = false
+                break
             }
         }
     }
@@ -161,9 +169,8 @@ extension GameViewController: UITableViewDelegate, UITableViewDataSource, Handle
             if attemptCount == 5 {
                 print("loser")
             }
-            let indexPosition = IndexPath(item: attemptCount, section: 0)
-            wordTableView.reloadRows(at: [indexPosition], with: .none)
-            attemptCount = attemptCount + 1
+            attemptCount += 1
+            wordTableView.reloadData()
         } else {
             //pop win alert
             let winAlert = UIAlertController(title: "Nice One!", message: "You Win!", preferredStyle: .alert)

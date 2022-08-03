@@ -14,7 +14,42 @@ protocol HandleKeyboard1Delegate {
 class KeyboardCell: UITableViewCell {
     
     var delegate: HandleKeyboard1Delegate?
-
+    
+    @IBOutlet weak var qButton: UIButton!
+    @IBOutlet weak var wButton: UIButton!
+    @IBOutlet weak var eButton: UIButton!
+    @IBOutlet weak var rButton: UIButton!
+    @IBOutlet weak var tButton: UIButton!
+    @IBOutlet weak var yButton: UIButton!
+    @IBOutlet weak var uButton: UIButton!
+    @IBOutlet weak var iButton: UIButton!
+    @IBOutlet weak var oButton: UIButton!
+    @IBOutlet weak var pButton: UIButton!
+    
+    var qButtonColor: String? {
+          didSet {
+              qButton.setTitleColor(setColor(colorString: qButtonColor ?? "black"), for: .normal)
+          }
+     }
+    var wButtonColor: String? {
+          didSet {
+              wButton.setTitleColor(setColor(colorString: wButtonColor ?? "black"), for: .normal)
+          }
+     }
+    
+    func setColor(colorString: String) -> UIColor {
+        switch(colorString) {
+        case "green":
+            return .green
+        case "yellow":
+            return .yellow
+        case "red":
+            return .red
+        default:
+            return .black
+        }
+    }
+    
     @IBAction func qPressed(_ sender: Any) {
         handleLetter(letter: "Q")
     }

@@ -104,6 +104,18 @@
                 </subviews>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="eButton" destination="pgl-uH-teH" id="WFR-sT-p5O"/>
+                <outlet property="iButton" destination="FA3-St-8Ho" id="exn-Kx-AFk"/>
+                <outlet property="oButton" destination="25K-fN-ulG" id="MtR-L3-Kdx"/>
+                <outlet property="pButton" destination="JCe-gX-G4b" id="BOg-eW-9G6"/>
+                <outlet property="qButton" destination="qwM-4a-MJX" id="Ufl-aQ-85H"/>
+                <outlet property="rButton" destination="q90-Y0-EgF" id="pAZ-7u-upF"/>
+                <outlet property="tButton" destination="qxn-Id-lK3" id="Lis-VK-bde"/>
+                <outlet property="uButton" destination="y7K-vV-NbJ" id="2Mz-Lh-IXY"/>
+                <outlet property="wButton" destination="hBL-7O-puY" id="gW7-XW-EFk"/>
+                <outlet property="yButton" destination="2AR-Rx-CkC" id="v8S-7j-Fo1"/>
+            </connections>
             <point key="canvasLocation" x="139.85507246376812" y="90.401785714285708"/>
         </tableViewCell>
     </objects>
