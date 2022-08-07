@@ -42,6 +42,21 @@ class GameViewController: UIViewController {
             CharacterModel.CharacterValue(value: "", color: "")])
     ]
     
+    var keyboardModel: [KeyboardModel]?
+    
+    var keyboardKeys = [
+        KeyboardModel.init(value: "q", color: "gray"),
+        KeyboardModel.init(value: "w", color: "gray"),
+        KeyboardModel.init(value: "e", color: "gray"),
+        KeyboardModel.init(value: "r", color: "gray"),
+        KeyboardModel.init(value: "t", color: "gray"),
+        KeyboardModel.init(value: "y", color: "gray"),
+        KeyboardModel.init(value: "u", color: "gray"),
+        KeyboardModel.init(value: "i", color: "gray"),
+        KeyboardModel.init(value: "o", color: "gray"),
+        KeyboardModel.init(value: "p", color: "gray")
+    ]
+    
     var question = "retry".map { String($0) }
     var answer: [String] = []
 
@@ -94,8 +109,16 @@ extension GameViewController: UITableViewDelegate, UITableViewDataSource, Handle
             if indexPath.row == 0 {
                 let cell = keyboardTableView.dequeueReusableCell(withIdentifier: "KeyboardCell") as! KeyboardCell
                 cell.delegate = self
-                cell.qButtonColor = "red"
-                cell.wButtonColor = "yellow"
+                cell.qButtonColor = keyboardKeys[0].color
+                cell.wButtonColor = keyboardKeys[1].color
+                cell.eButtonColor = keyboardKeys[2].color
+                cell.rButtonColor = keyboardKeys[3].color
+                cell.tButtonColor = keyboardKeys[4].color
+                cell.yButtonColor = keyboardKeys[5].color
+                cell.uButtonColor = keyboardKeys[6].color
+                cell.iButtonColor = keyboardKeys[7].color
+                cell.oButtonColor = keyboardKeys[8].color
+                cell.pButtonColor = keyboardKeys[9].color
                 return cell
             } else if indexPath.row == 1 {
                 let cell = keyboardTableView.dequeueReusableCell(withIdentifier: "Keyboard2Cell") as! Keyboard2Cell
@@ -145,14 +168,21 @@ extension GameViewController: UITableViewDelegate, UITableViewDataSource, Handle
         for i in 0...answer.count - 1  {
             if answer[i] == question[i] {
                 data[attemptCount].word[i].color = "green"
+                keyboardKeys.first(where: {$0.value == answer[i]})?.color = "green"
             } else  if question.contains(answer[i]) {
                 data[attemptCount].word[i].color = "yellow"
+                if !keyboardKeys.contains(where: {$0.value == answer[i] && $0.color == "green"}) {
+                    keyboardKeys.first(where: {$0.value == answer[i]})?.color = "yellow"
+                }
             } else if !question.contains(answer[i]) {
                 data[attemptCount].word[i].color = "red"
+                keyboardKeys.first(where: {$0.value == answer[i]})?.color = "red"
             } else {
                 data[attemptCount].word[i].color = "black"
+                keyboardKeys.first(where: {$0.value == answer[i]})?.color = "gray"
             }
         }
+        keyboardTableView.reloadData()
         
         for i in 0...answer.count - 1  {
             if answer[i] == question[i] {

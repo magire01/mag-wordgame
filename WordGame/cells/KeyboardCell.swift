@@ -15,7 +15,11 @@ class KeyboardCell: UITableViewCell {
     
     var delegate: HandleKeyboard1Delegate?
     
-    @IBOutlet weak var qButton: UIButton!
+    @IBOutlet weak var qButton: UIButton! {
+        didSet {
+            self.qButton.backgroundColor = .red
+        }
+    }
     @IBOutlet weak var wButton: UIButton!
     @IBOutlet weak var eButton: UIButton!
     @IBOutlet weak var rButton: UIButton!
@@ -28,12 +32,52 @@ class KeyboardCell: UITableViewCell {
     
     var qButtonColor: String? {
           didSet {
-              qButton.setTitleColor(setColor(colorString: qButtonColor ?? "black"), for: .normal)
+              self.qButton.backgroundColor = setColor(colorString: qButtonColor ?? "gray")
           }
      }
     var wButtonColor: String? {
           didSet {
-              wButton.setTitleColor(setColor(colorString: wButtonColor ?? "black"), for: .normal)
+              self.wButton.backgroundColor = setColor(colorString: wButtonColor ?? "gray")
+          }
+     }
+    var eButtonColor: String? {
+          didSet {
+              self.eButton.backgroundColor = setColor(colorString: eButtonColor ?? "gray")
+          }
+     }
+    var rButtonColor: String? {
+          didSet {
+              self.rButton.backgroundColor = setColor(colorString: rButtonColor ?? "gray")
+          }
+     }
+    var tButtonColor: String? {
+          didSet {
+              self.tButton.backgroundColor = setColor(colorString: tButtonColor ?? "gray")
+          }
+     }
+    var yButtonColor: String? {
+          didSet {
+              self.yButton.backgroundColor = setColor(colorString: yButtonColor ?? "gray")
+          }
+     }
+    var uButtonColor: String? {
+          didSet {
+              self.uButton.backgroundColor = setColor(colorString: uButtonColor ?? "gray")
+          }
+     }
+    var iButtonColor: String? {
+          didSet {
+              self.iButton.backgroundColor = setColor(colorString: iButtonColor ?? "gray")
+          }
+     }
+    var oButtonColor: String? {
+          didSet {
+              self.oButton.backgroundColor = setColor(colorString: oButtonColor ?? "gray")
+          }
+     }
+    var pButtonColor: String? {
+          didSet {
+              self.pButton.backgroundColor = setColor(colorString: pButtonColor ?? "gray")
           }
      }
     
@@ -45,6 +89,8 @@ class KeyboardCell: UITableViewCell {
             return .yellow
         case "red":
             return .red
+        case "gray":
+            return .lightGray
         default:
             return .black
         }
@@ -94,14 +140,17 @@ class KeyboardCell: UITableViewCell {
         delegate?.updateKeyboard1(with: letter)
     }
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+        
     }
     
 }

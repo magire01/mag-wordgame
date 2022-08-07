@@ -27,6 +27,7 @@
 		59481719288C8C930061049B /* Keyboard3Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59481717288C8C930061049B /* Keyboard3Cell.swift */; };
 		5948171A288C8C930061049B /* Keyboard3Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59481718288C8C930061049B /* Keyboard3Cell.xib */; };
 		5955DBF1288DBB400083A8BC /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5955DBF0288DBB400083A8BC /* CharacterModel.swift */; };
+		59D8D623289DDF3C00AF0017 /* KeybardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D8D622289DDF3C00AF0017 /* KeybardModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		59481717288C8C930061049B /* Keyboard3Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard3Cell.swift; sourceTree = "<group>"; };
 		59481718288C8C930061049B /* Keyboard3Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Keyboard3Cell.xib; sourceTree = "<group>"; };
 		5955DBF0288DBB400083A8BC /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
+		59D8D622289DDF3C00AF0017 /* KeybardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeybardModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 				594816E0288C47D90061049B /* Info.plist */,
 				594816D8288C47D70061049B /* WordGame.xcdatamodeld */,
 				5955DBF0288DBB400083A8BC /* CharacterModel.swift */,
+				59D8D622289DDF3C00AF0017 /* KeybardModel.swift */,
 			);
 			path = WordGame;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				594816D4288C47D70061049B /* ViewController.swift in Sources */,
 				594816D0288C47D70061049B /* AppDelegate.swift in Sources */,
 				594816D2288C47D70061049B /* SceneDelegate.swift in Sources */,
+				59D8D623289DDF3C00AF0017 /* KeybardModel.swift in Sources */,
 				594816DA288C47D70061049B /* WordGame.xcdatamodeld in Sources */,
 				5948170D288C757B0061049B /* KeyboardCell.swift in Sources */,
 				59481709288C532C0061049B /* GameCell.swift in Sources */,
