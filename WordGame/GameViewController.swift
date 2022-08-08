@@ -73,7 +73,7 @@ class GameViewController: UIViewController {
         KeyboardModel.init(value: "m", color: "gray")
     ]
     
-    var question = "retry".map { String($0) }
+    var question = "blues".map { String($0) }
     var answer: [String] = []
 
     var isCorrect: Bool = false

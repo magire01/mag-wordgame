@@ -23,7 +23,7 @@ class GameCell: UITableViewCell {
      }
     var char0Color: String? {
           didSet {
-              firstCharLabel.textColor = setColor(colorString: char0Color ?? "black")
+              firstCharLabel.backgroundColor = setColor(colorString: char0Color ?? "black")
           }
      }
     
@@ -34,7 +34,7 @@ class GameCell: UITableViewCell {
      }
     var char1Color: String? {
           didSet {
-              secondCharLabel.textColor = setColor(colorString: char1Color ?? "black")
+              secondCharLabel.backgroundColor = setColor(colorString: char1Color ?? "black")
           }
      }
     
@@ -45,7 +45,7 @@ class GameCell: UITableViewCell {
      }
     var char2Color: String? {
           didSet {
-              thirdCharLabel.textColor = setColor(colorString: char2Color ?? "black")
+              thirdCharLabel.backgroundColor = setColor(colorString: char2Color ?? "black")
           }
      }
     
@@ -56,7 +56,7 @@ class GameCell: UITableViewCell {
      }
     var char3Color: String? {
           didSet {
-              fourthCharLabel.textColor = setColor(colorString: char3Color ?? "black")
+              fourthCharLabel.backgroundColor = setColor(colorString: char3Color ?? "black")
           }
      }
     
@@ -67,7 +67,7 @@ class GameCell: UITableViewCell {
      }
     var char4Color: String? {
           didSet {
-              fifthCharLabel.textColor = setColor(colorString: char4Color ?? "black")
+              fifthCharLabel.backgroundColor = setColor(colorString: char4Color ?? "black")
           }
      }
     
@@ -80,7 +80,7 @@ class GameCell: UITableViewCell {
         case "red":
             return .red
         default:
-            return .black
+            return .lightGray
         }
     }
     
@@ -92,11 +92,32 @@ class GameCell: UITableViewCell {
         fourthCharLabel.text = blank
         fifthCharLabel.text = blank
         
-        firstCharLabel.textColor = setColor(colorString: char0Color ?? "black")
-        secondCharLabel.textColor = setColor(colorString: char1Color ?? "black")
-        thirdCharLabel.textColor = setColor(colorString: char2Color ?? "black")
-        fourthCharLabel.textColor = setColor(colorString: char3Color ?? "black")
-        fifthCharLabel.textColor = setColor(colorString: char4Color ?? "black")
+        firstCharLabel.textColor = .white
+        secondCharLabel.textColor = .white
+        thirdCharLabel.textColor = .white
+        fourthCharLabel.textColor = .white
+        fifthCharLabel.textColor = .white
+        
+        firstCharLabel.layer.borderWidth = 1
+        firstCharLabel.layer.borderColor = UIColor.black.cgColor
+        firstCharLabel.textAlignment = .center
+        
+        secondCharLabel.layer.borderWidth = 1
+        secondCharLabel.layer.borderColor = UIColor.black.cgColor
+        secondCharLabel.textAlignment = .center
+        
+        thirdCharLabel.layer.borderWidth = 1
+        thirdCharLabel.layer.borderColor = UIColor.black.cgColor
+        thirdCharLabel.textAlignment = .center
+        
+        fourthCharLabel.layer.borderWidth = 1
+        fourthCharLabel.layer.borderColor = UIColor.black.cgColor
+        fourthCharLabel.textAlignment = .center
+        
+        fifthCharLabel.layer.borderWidth = 1
+        fifthCharLabel.layer.borderColor = UIColor.black.cgColor
+        fifthCharLabel.textAlignment = .center
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
