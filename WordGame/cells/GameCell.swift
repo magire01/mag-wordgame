@@ -8,11 +8,19 @@
 import UIKit
 
 class GameCell: UITableViewCell {
+    
     @IBOutlet weak var firstCharLabel: UILabel!
     @IBOutlet weak var secondCharLabel: UILabel!
     @IBOutlet weak var thirdCharLabel: UILabel!
     @IBOutlet weak var fourthCharLabel: UILabel!
     @IBOutlet weak var fifthCharLabel: UILabel!
+    
+    @IBOutlet weak var firstCharView: UIView!
+    @IBOutlet weak var secondCharView: UIView!
+    @IBOutlet weak var thirdCharView: UIView!
+    @IBOutlet weak var fourthCharView: UIView!
+    @IBOutlet weak var fifthCharView: UIView!
+    
     
     var blank: String = ""
     

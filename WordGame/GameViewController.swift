@@ -114,7 +114,8 @@ class GameViewController: UIViewController {
 extension GameViewController: UITableViewDelegate, UITableViewDataSource, HandleKeyboard1Delegate, HandleKeyboard2Delegate, HandleKeyboard3Delegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == wordTableView {
-            return attemptCount + 1
+//            return attemptCount + 1
+            return 5
         } else {
             return 3
         }
@@ -175,6 +176,14 @@ extension GameViewController: UITableViewDelegate, UITableViewDataSource, Handle
                 cell.mButtonColor = keyboardKeys[25].color
                 return cell
             }
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if tableView == wordTableView {
+            return 80
+        } else {
+            return 50
         }
     }
     
@@ -247,11 +256,23 @@ extension GameViewController: UITableViewDelegate, UITableViewDataSource, Handle
     
     private func completeGame() {
         if !isCorrect {
-            if attemptCount == 5 {
-                print("loser")
+            if attemptCount == 4 {
+                //pop win alert
+                let loseAlert = UIAlertController(title: "Too Bad!", message: "You Lose!", preferredStyle: .alert)
+                let playAgain = UIAlertAction(title: "Play Again", style: .default, handler:  { (action) -> Void in
+                    self.restartGame()
+                 })
+                let quit = UIAlertAction(title: "Quit", style: .destructive, handler: { (action) -> Void in
+                    self.dismiss(animated: true, completion: nil)
+                })
+                loseAlert.addAction(playAgain)
+                loseAlert.addAction(quit)
+                self.present(loseAlert, animated: true, completion: nil)
+            } else {
+                attemptCount += 1
+                wordTableView.reloadData()
             }
-            attemptCount += 1
-            wordTableView.reloadData()
+            
         } else {
             //pop win alert
             let winAlert = UIAlertController(title: "Nice One!", message: "You Win!", preferredStyle: .alert)
