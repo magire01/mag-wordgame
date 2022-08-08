@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,48 +15,105 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mark's Word Game" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gri-hj-0e1">
-                                <rect key="frame" x="96" y="67.5" width="222" height="32.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QGi-bg-zL8">
+                                <rect key="frame" x="57" y="311" width="300" height="50"/>
+                                <color key="backgroundColor" red="0.16862745098039217" green="0.47843137254901957" blue="0.47058823529411764" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="nGO-50-0gs"/>
+                                </constraints>
+                                <color key="tintColor" red="0.22745098039215686" green="0.68627450980392157" blue="0.66274509803921566" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="New Game">
+                                            <attributes>
+                                                <font key="NSFont" size="24" name="HelveticaNeue-Medium"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <attributedString key="attributedSubtitle"/>
+                                    <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="newGameButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ubf-K6-XXg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gY7-Tr-hbF">
+                                <rect key="frame" x="57" y="423" width="300" height="50"/>
+                                <color key="backgroundColor" red="0.16862745098039217" green="0.47843137254901957" blue="0.47058823529411764" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Vv2-Gl-8CC"/>
+                                </constraints>
+                                <color key="tintColor" red="0.22745098039215686" green="0.68627450980392157" blue="0.66274509803921566" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Stats">
+                                            <attributes>
+                                                <font key="NSFont" size="24" name="HelveticaNeue-Medium"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <attributedString key="attributedSubtitle"/>
+                                    <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zzg-h6-YH8">
+                                <rect key="frame" x="57" y="534" width="300" height="50"/>
+                                <color key="backgroundColor" red="0.090196078430000007" green="0.47843137250000001" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Fq1-hY-rR2"/>
+                                </constraints>
+                                <color key="tintColor" red="0.22745098039215686" green="0.68627450980392157" blue="0.66274509803921566" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Settings">
+                                            <attributes>
+                                                <font key="NSFont" size="24" name="HelveticaNeue-Medium"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gri-hj-0e1">
+                                <rect key="frame" x="10" y="67.5" width="394" height="85.5"/>
+                                <attributedString key="attributedText">
+                                    <fragment content=" Word Game">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="72" name="HelveticaNeue-CondensedBold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Lpp-Tj-WlP">
-                                <rect key="frame" x="120" y="181" width="174" height="193"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QGi-bg-zL8">
-                                        <rect key="frame" x="0.0" y="0.0" width="174" height="31"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="New Game"/>
-                                        <connections>
-                                            <action selector="newGameButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ubf-K6-XXg"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gY7-Tr-hbF">
-                                        <rect key="frame" x="0.0" y="81" width="174" height="31"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Stats"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zzg-h6-YH8">
-                                        <rect key="frame" x="0.0" y="162" width="174" height="31"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Settings"/>
-                                    </button>
-                                </subviews>
-                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.090196078431372548" green="0.14509803921568626" blue="0.16470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gri-hj-0e1" secondAttribute="trailing" constant="96" id="7U4-aw-UBs"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Lpp-Tj-WlP" secondAttribute="bottom" constant="488" id="CcA-HY-V8Q"/>
-                            <constraint firstItem="Lpp-Tj-WlP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="120" id="Eri-ZC-8iF"/>
-                            <constraint firstItem="gri-hj-0e1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="96" id="agz-cx-2de"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Lpp-Tj-WlP" secondAttribute="trailing" constant="120" id="g8G-N0-t7j"/>
+                            <constraint firstItem="zzg-h6-YH8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="57" id="7Ma-N9-UvG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gri-hj-0e1" secondAttribute="trailing" constant="10" id="7U4-aw-UBs"/>
+                            <constraint firstItem="gY7-Tr-hbF" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="F7e-H4-6F0"/>
+                            <constraint firstItem="QGi-bg-zL8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="57" id="QLD-SQ-mxu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gY7-Tr-hbF" secondAttribute="trailing" constant="57" id="WQv-gB-iuf"/>
+                            <constraint firstItem="gri-hj-0e1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="agz-cx-2de"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QGi-bg-zL8" secondAttribute="trailing" constant="57" id="bDX-pB-Gti"/>
+                            <constraint firstItem="zzg-h6-YH8" firstAttribute="top" secondItem="gY7-Tr-hbF" secondAttribute="bottom" constant="61" id="d5D-iZ-Fdg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zzg-h6-YH8" secondAttribute="trailing" constant="57" id="hiy-df-v4f"/>
                             <constraint firstItem="gri-hj-0e1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="23.5" id="lcW-ej-3vs"/>
-                            <constraint firstItem="Lpp-Tj-WlP" firstAttribute="top" secondItem="gri-hj-0e1" secondAttribute="bottom" constant="81" id="vhc-eM-zqn"/>
+                            <constraint firstItem="gY7-Tr-hbF" firstAttribute="top" secondItem="QGi-bg-zL8" secondAttribute="bottom" constant="62" id="onn-4E-QO6"/>
+                            <constraint firstItem="gY7-Tr-hbF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="57" id="rN5-2X-RO0"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="newGameButton" destination="QGi-bg-zL8" id="3mr-0k-gwJ"/>
+                        <outlet property="settingsButton" destination="zzg-h6-YH8" id="5va-br-eVf"/>
+                        <outlet property="statsButton" destination="gY7-Tr-hbF" id="3rZ-ec-bie"/>
+                        <outlet property="titleLabel" destination="gri-hj-0e1" id="Db0-yr-oez"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -73,7 +129,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="w4b-Nj-3Bq">
                                 <rect key="frame" x="0.0" y="44" width="414" height="518"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="0.16862745100000001" green="0.4431372549" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GameCell" id="vFG-PF-BOa">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
@@ -85,15 +141,15 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="X4C-hR-Z8Z">
-                                <rect key="frame" x="20" y="602" width="374" height="260"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <tableView clipsSubviews="YES" contentMode="center" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="X4C-hR-Z8Z">
+                                <rect key="frame" x="10" y="662" width="394" height="200"/>
+                                <color key="backgroundColor" red="0.16862745100000001" green="0.4431372549" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="KeyboardCell" id="WQL-Jz-RCD" customClass="KeyboardCell" customModule="WordGame" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="374" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="394" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WQL-Jz-RCD" id="8Kl-eX-dZq">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="394" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -101,13 +157,13 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rJZ-XN-rdo"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.16862745098039217" green="0.44313725490196076" blue="0.47058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="X4C-hR-Z8Z" firstAttribute="top" secondItem="w4b-Nj-3Bq" secondAttribute="bottom" constant="40" id="0hU-Dx-D4Y"/>
+                            <constraint firstItem="X4C-hR-Z8Z" firstAttribute="top" secondItem="w4b-Nj-3Bq" secondAttribute="bottom" constant="100" id="0hU-Dx-D4Y"/>
                             <constraint firstItem="w4b-Nj-3Bq" firstAttribute="trailing" secondItem="rJZ-XN-rdo" secondAttribute="trailing" id="5Ml-ir-mpP"/>
                             <constraint firstItem="X4C-hR-Z8Z" firstAttribute="bottom" secondItem="rJZ-XN-rdo" secondAttribute="bottom" id="6wk-jh-T9F"/>
-                            <constraint firstItem="X4C-hR-Z8Z" firstAttribute="leading" secondItem="rJZ-XN-rdo" secondAttribute="leading" constant="20" id="B1K-5M-7Io"/>
-                            <constraint firstItem="rJZ-XN-rdo" firstAttribute="trailing" secondItem="X4C-hR-Z8Z" secondAttribute="trailing" constant="20" id="Ri7-MX-iSO"/>
+                            <constraint firstItem="X4C-hR-Z8Z" firstAttribute="leading" secondItem="rJZ-XN-rdo" secondAttribute="leading" constant="10" id="B1K-5M-7Io"/>
+                            <constraint firstItem="rJZ-XN-rdo" firstAttribute="trailing" secondItem="X4C-hR-Z8Z" secondAttribute="trailing" constant="10" id="Ri7-MX-iSO"/>
                             <constraint firstItem="w4b-Nj-3Bq" firstAttribute="leading" secondItem="rJZ-XN-rdo" secondAttribute="leading" id="XZS-Ut-oD1"/>
                             <constraint firstItem="rJZ-XN-rdo" firstAttribute="bottom" secondItem="w4b-Nj-3Bq" secondAttribute="bottom" constant="300" id="fYc-iu-hhd"/>
                             <constraint firstItem="w4b-Nj-3Bq" firstAttribute="top" secondItem="rJZ-XN-rdo" secondAttribute="top" id="zv1-5h-bnP"/>
@@ -123,9 +179,4 @@
             <point key="canvasLocation" x="18.840579710144929" y="791.51785714285711"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

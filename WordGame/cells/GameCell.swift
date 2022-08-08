@@ -76,7 +76,7 @@ class GameCell: UITableViewCell {
         case "green":
             return .green
         case "yellow":
-            return .yellow
+            return .orange
         case "red":
             return .red
         default:

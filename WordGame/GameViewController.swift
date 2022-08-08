@@ -54,7 +54,23 @@ class GameViewController: UIViewController {
         KeyboardModel.init(value: "u", color: "gray"),
         KeyboardModel.init(value: "i", color: "gray"),
         KeyboardModel.init(value: "o", color: "gray"),
-        KeyboardModel.init(value: "p", color: "gray")
+        KeyboardModel.init(value: "p", color: "gray"),
+        KeyboardModel.init(value: "a", color: "gray"),
+        KeyboardModel.init(value: "s", color: "gray"),
+        KeyboardModel.init(value: "d", color: "gray"),
+        KeyboardModel.init(value: "f", color: "gray"),
+        KeyboardModel.init(value: "g", color: "gray"),
+        KeyboardModel.init(value: "h", color: "gray"),
+        KeyboardModel.init(value: "j", color: "gray"),
+        KeyboardModel.init(value: "k", color: "gray"),
+        KeyboardModel.init(value: "l", color: "gray"),
+        KeyboardModel.init(value: "z", color: "gray"),
+        KeyboardModel.init(value: "x", color: "gray"),
+        KeyboardModel.init(value: "c", color: "gray"),
+        KeyboardModel.init(value: "v", color: "gray"),
+        KeyboardModel.init(value: "b", color: "gray"),
+        KeyboardModel.init(value: "n", color: "gray"),
+        KeyboardModel.init(value: "m", color: "gray")
     ]
     
     var question = "retry".map { String($0) }
@@ -82,7 +98,7 @@ class GameViewController: UIViewController {
     }
 }
 
-extension GameViewController: UITableViewDelegate, UITableViewDataSource, HandleKeyboard1Delegate, HandleKeyboard3Delegate {
+extension GameViewController: UITableViewDelegate, UITableViewDataSource, HandleKeyboard1Delegate, HandleKeyboard2Delegate, HandleKeyboard3Delegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == wordTableView {
             return attemptCount + 1
@@ -119,13 +135,31 @@ extension GameViewController: UITableViewDelegate, UITableViewDataSource, Handle
                 cell.iButtonColor = keyboardKeys[7].color
                 cell.oButtonColor = keyboardKeys[8].color
                 cell.pButtonColor = keyboardKeys[9].color
+                
                 return cell
             } else if indexPath.row == 1 {
                 let cell = keyboardTableView.dequeueReusableCell(withIdentifier: "Keyboard2Cell") as! Keyboard2Cell
+                cell.delegate = self
+                cell.aButtonColor = keyboardKeys[10].color
+                cell.sButtonColor = keyboardKeys[11].color
+                cell.dButtonColor = keyboardKeys[12].color
+                cell.fButtonColor = keyboardKeys[13].color
+                cell.gButtonColor = keyboardKeys[14].color
+                cell.hButtonColor = keyboardKeys[15].color
+                cell.jButtonColor = keyboardKeys[16].color
+                cell.kButtonColor = keyboardKeys[17].color
+                cell.lButtonColor = keyboardKeys[18].color
                 return cell
             } else {
                 let cell = keyboardTableView.dequeueReusableCell(withIdentifier: "Keyboard3Cell") as! Keyboard3Cell
                 cell.delegate = self
+                cell.zButtonColor = keyboardKeys[19].color
+                cell.xButtonColor = keyboardKeys[20].color
+                cell.cButtonColor = keyboardKeys[21].color
+                cell.vButtonColor = keyboardKeys[22].color
+                cell.bButtonColor = keyboardKeys[23].color
+                cell.nButtonColor = keyboardKeys[24].color
+                cell.mButtonColor = keyboardKeys[25].color
                 return cell
             }
         }
@@ -253,6 +287,35 @@ extension GameViewController: UITableViewDelegate, UITableViewDataSource, Handle
                 CharacterModel.CharacterValue(value: "", color: "")])
         ]
         wordTableView.reloadData()
+        keyboardKeys = [
+            KeyboardModel.init(value: "q", color: "gray"),
+            KeyboardModel.init(value: "w", color: "gray"),
+            KeyboardModel.init(value: "e", color: "gray"),
+            KeyboardModel.init(value: "r", color: "gray"),
+            KeyboardModel.init(value: "t", color: "gray"),
+            KeyboardModel.init(value: "y", color: "gray"),
+            KeyboardModel.init(value: "u", color: "gray"),
+            KeyboardModel.init(value: "i", color: "gray"),
+            KeyboardModel.init(value: "o", color: "gray"),
+            KeyboardModel.init(value: "p", color: "gray"),
+            KeyboardModel.init(value: "a", color: "gray"),
+            KeyboardModel.init(value: "s", color: "gray"),
+            KeyboardModel.init(value: "d", color: "gray"),
+            KeyboardModel.init(value: "f", color: "gray"),
+            KeyboardModel.init(value: "g", color: "gray"),
+            KeyboardModel.init(value: "h", color: "gray"),
+            KeyboardModel.init(value: "j", color: "gray"),
+            KeyboardModel.init(value: "k", color: "gray"),
+            KeyboardModel.init(value: "l", color: "gray"),
+            KeyboardModel.init(value: "z", color: "gray"),
+            KeyboardModel.init(value: "x", color: "gray"),
+            KeyboardModel.init(value: "c", color: "gray"),
+            KeyboardModel.init(value: "v", color: "gray"),
+            KeyboardModel.init(value: "b", color: "gray"),
+            KeyboardModel.init(value: "n", color: "gray"),
+            KeyboardModel.init(value: "m", color: "gray")
+        ]
+        keyboardTableView.reloadData() 
     }
 }
 

@@ -17,18 +17,64 @@ class KeyboardCell: UITableViewCell {
     
     @IBOutlet weak var qButton: UIButton! {
         didSet {
-            self.qButton.backgroundColor = .red
+            self.qButton.layer.borderWidth = 2
+            self.qButton.layer.borderColor = UIColor.black.cgColor
         }
     }
-    @IBOutlet weak var wButton: UIButton!
-    @IBOutlet weak var eButton: UIButton!
-    @IBOutlet weak var rButton: UIButton!
-    @IBOutlet weak var tButton: UIButton!
-    @IBOutlet weak var yButton: UIButton!
-    @IBOutlet weak var uButton: UIButton!
-    @IBOutlet weak var iButton: UIButton!
-    @IBOutlet weak var oButton: UIButton!
-    @IBOutlet weak var pButton: UIButton!
+    @IBOutlet weak var wButton: UIButton!{
+        didSet {
+            self.wButton.layer.borderWidth = 2
+            self.wButton.layer.borderColor = UIColor.black.cgColor
+        }
+    }
+    @IBOutlet weak var eButton: UIButton!{
+        didSet {
+            self.eButton.layer.borderWidth = 2
+            self.eButton.layer.borderColor = UIColor.black.cgColor
+        }
+    }
+    @IBOutlet weak var rButton: UIButton!{
+        didSet {
+            self.rButton.layer.borderWidth = 2
+            self.rButton.layer.borderColor = UIColor.black.cgColor
+        }
+    }
+    @IBOutlet weak var tButton: UIButton!{
+        didSet {
+            self.tButton.layer.borderWidth = 2
+            self.tButton.layer.borderColor = UIColor.black.cgColor
+        }
+    }
+    @IBOutlet weak var yButton: UIButton!{
+        didSet {
+            self.yButton.layer.borderWidth = 2
+            self.yButton.layer.borderColor = UIColor.black.cgColor
+        }
+    }
+    @IBOutlet weak var uButton: UIButton!{
+        didSet {
+            self.uButton.layer.borderWidth = 2
+            self.uButton.layer.borderColor = UIColor.black.cgColor
+        }
+    }
+    @IBOutlet weak var iButton: UIButton!{
+        didSet {
+            self.iButton.layer.borderWidth = 2
+            self.iButton.layer.borderColor = UIColor.black.cgColor
+        }
+    }
+    @IBOutlet weak var oButton: UIButton!{
+        didSet {
+            self.oButton.layer.borderWidth = 2
+            self.oButton.layer.borderColor = UIColor.black.cgColor
+        }
+    }
+    @IBOutlet weak var pButton: UIButton!{
+        didSet {
+            self.pButton.layer.borderWidth = 2
+            self.pButton.layer.borderColor = UIColor.black.cgColor
+        }
+    }
     
     var qButtonColor: String? {
           didSet {
@@ -86,7 +132,7 @@ class KeyboardCell: UITableViewCell {
         case "green":
             return .green
         case "yellow":
-            return .yellow
+            return .orange
         case "red":
             return .red
         case "gray":
@@ -143,6 +189,7 @@ class KeyboardCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
 
     }
 
