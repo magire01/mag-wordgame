@@ -9,6 +9,16 @@ import UIKit
 
 class GameViewController: UIViewController {
     
+    var answerList = [
+        "blues",
+        "retry",
+        "angel",
+        "marks",
+        "sings"
+    ]
+    
+    var randomInt: Int?
+    
     var data = [
         CharacterModel.WordAttempt.init(word: [
             CharacterModel.CharacterValue(value: "", color: ""),
@@ -72,8 +82,7 @@ class GameViewController: UIViewController {
         KeyboardModel.init(value: "n", color: "gray"),
         KeyboardModel.init(value: "m", color: "gray")
     ]
-    
-    var question = "blues".map { String($0) }
+    lazy var question = answerList[randomInt!].map { String($0) }
     var answer: [String] = []
 
     var isCorrect: Bool = false
@@ -95,6 +104,10 @@ class GameViewController: UIViewController {
         keyboardTableView.register(UINib(nibName: "KeyboardCell", bundle: nil), forCellReuseIdentifier: "KeyboardCell")
         keyboardTableView.register(UINib(nibName: "Keyboard2Cell", bundle: nil), forCellReuseIdentifier: "Keyboard2Cell")
         keyboardTableView.register(UINib(nibName: "Keyboard3Cell", bundle: nil), forCellReuseIdentifier: "Keyboard3Cell")
+        
+        self.randomInt = Int.random(in: 0..<answerList.count - 1)
+        question = answerList[randomInt!].map { String($0) }
+        
     }
 }
 
@@ -165,6 +178,10 @@ extension GameViewController: UITableViewDelegate, UITableViewDataSource, Handle
         }
     }
     
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        return nil
+    }
+    
     func updateKeyboard1(with letter: String) {
         if characterCount < 5 {
             data[attemptCount].word[characterCount].value = letter
@@ -176,7 +193,7 @@ extension GameViewController: UITableViewDelegate, UITableViewDataSource, Handle
     
     func refreshRow() {
         let indexPosition = IndexPath(item: attemptCount, section: 0)
-        wordTableView.reloadRows(at: [indexPosition], with: .fade)
+        wordTableView.reloadRows(at: [indexPosition], with: .none)
     }
     
     func deleteKey() {
@@ -251,6 +268,8 @@ extension GameViewController: UITableViewDelegate, UITableViewDataSource, Handle
     }
     
     private func restartGame() {
+        self.randomInt = Int.random(in: 0..<answerList.count - 1)
+        question = answerList[randomInt!].map { String($0) }
         answer = []
         characterCount = 0
         attemptCount = 0

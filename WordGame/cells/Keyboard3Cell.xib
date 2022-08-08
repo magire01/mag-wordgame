@@ -17,7 +17,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="CTn-Sx-A0e">
-                        <rect key="frame" x="20" y="0.0" width="336.5" height="24.5"/>
+                        <rect key="frame" x="37" y="0.0" width="336.5" height="24.5"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="245" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SSL-5I-eTi">
                                 <rect key="frame" x="0.0" y="0.0" width="36.5" height="24.5"/>
@@ -115,14 +115,12 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="336.5" id="IXE-zb-VGN"/>
-                        </constraints>
                     </stackView>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="CTn-Sx-A0e" secondAttribute="trailing" constant="36.5" id="54t-vg-TZk"/>
                     <constraint firstItem="CTn-Sx-A0e" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="CHG-TM-5cY"/>
-                    <constraint firstItem="CTn-Sx-A0e" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="GIm-cy-Cl3"/>
+                    <constraint firstItem="CTn-Sx-A0e" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="37" id="GIm-cy-Cl3"/>
                     <constraint firstAttribute="bottom" secondItem="CTn-Sx-A0e" secondAttribute="bottom" constant="19.5" id="UZs-7s-vUQ"/>
                 </constraints>
             </tableViewCellContentView>
