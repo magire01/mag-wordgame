@@ -25,7 +25,8 @@ public class WordController {
             } catch {
                 print("error:\(error)")
             }
-        }    }
+        }
+    }
 }
 
 
