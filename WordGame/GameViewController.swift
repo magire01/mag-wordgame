@@ -75,6 +75,7 @@ class GameViewController: UIViewController {
         KeyboardModel.init(value: "n", color: "gray"),
         KeyboardModel.init(value: "m", color: "gray")
     ]
+    
     lazy var question = wordList[randomInt!].map { String($0) }
     var answer: [String] = []
 
