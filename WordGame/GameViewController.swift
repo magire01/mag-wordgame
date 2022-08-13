@@ -9,13 +9,7 @@ import UIKit
 
 class GameViewController: UIViewController {
     
-    var answerList = [
-        "blues",
-        "retry",
-        "angel",
-        "marks",
-        "sings"
-    ]
+    var wordList: [String] = WordController().wordModel ?? []
     
     var randomInt: Int?
     
@@ -53,7 +47,6 @@ class GameViewController: UIViewController {
     ]
     
     var keyboardModel: [KeyboardModel]?
-    
     var keyboardKeys = [
         KeyboardModel.init(value: "q", color: "gray"),
         KeyboardModel.init(value: "w", color: "gray"),
@@ -82,7 +75,7 @@ class GameViewController: UIViewController {
         KeyboardModel.init(value: "n", color: "gray"),
         KeyboardModel.init(value: "m", color: "gray")
     ]
-    lazy var question = answerList[randomInt!].map { String($0) }
+    lazy var question = wordList[randomInt!].map { String($0) }
     var answer: [String] = []
 
     var isCorrect: Bool = false
@@ -94,7 +87,7 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        // Do any additional setup after loading the view.\
         wordTableView.delegate = self
         wordTableView.dataSource = self
         wordTableView.register(UINib(nibName: "GameCell", bundle: nil), forCellReuseIdentifier: "GameCell")
@@ -105,8 +98,8 @@ class GameViewController: UIViewController {
         keyboardTableView.register(UINib(nibName: "Keyboard2Cell", bundle: nil), forCellReuseIdentifier: "Keyboard2Cell")
         keyboardTableView.register(UINib(nibName: "Keyboard3Cell", bundle: nil), forCellReuseIdentifier: "Keyboard3Cell")
         
-        self.randomInt = Int.random(in: 0..<answerList.count - 1)
-        question = answerList[randomInt!].map { String($0) }
+        self.randomInt = Int.random(in: 0..<wordList.count - 1)
+        question = wordList[randomInt!].map { String($0) }
         
     }
 }
@@ -183,7 +176,7 @@ extension GameViewController: UITableViewDelegate, UITableViewDataSource, Handle
         if tableView == wordTableView {
             return 80
         } else {
-            return 50
+            return 60
         }
     }
     
@@ -215,12 +208,18 @@ extension GameViewController: UITableViewDelegate, UITableViewDataSource, Handle
     }
     
     func submitKey() {
+        // if question joined is in the array of words.. continue, if not, error
+        let joinedAnswer = answer.joined(separator: "")
         if characterCount == 5 {
-            compareAnswer()
-            answer = []
-            characterCount = 0
-            refreshRow()
-            completeGame()
+            if wordList.contains(joinedAnswer) {
+                compareAnswer()
+                answer = []
+                characterCount = 0
+                refreshRow()
+                completeGame()
+            } else {
+                print("Not a word")
+            }
         }
     }
     
@@ -258,7 +257,7 @@ extension GameViewController: UITableViewDelegate, UITableViewDataSource, Handle
         if !isCorrect {
             if attemptCount == 4 {
                 //pop win alert
-                let loseAlert = UIAlertController(title: "Too Bad!", message: "You Lose!", preferredStyle: .alert)
+                let loseAlert = UIAlertController(title: "You Lose!", message: "The correct word was: \(question.joined())", preferredStyle: .alert)
                 let playAgain = UIAlertAction(title: "Play Again", style: .default, handler:  { (action) -> Void in
                     self.restartGame()
                  })
@@ -289,8 +288,8 @@ extension GameViewController: UITableViewDelegate, UITableViewDataSource, Handle
     }
     
     private func restartGame() {
-        self.randomInt = Int.random(in: 0..<answerList.count - 1)
-        question = answerList[randomInt!].map { String($0) }
+        self.randomInt = Int.random(in: 0..<wordList.count - 1)
+        question = wordList[randomInt!].map { String($0) }
         answer = []
         characterCount = 0
         attemptCount = 0
