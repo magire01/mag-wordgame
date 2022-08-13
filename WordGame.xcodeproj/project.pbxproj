@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		590BC91228A764960055C5F8 /* WordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590BC91128A764960055C5F8 /* WordController.swift */; };
+		593B6DEE28A7F8C100A017FC /* words.json in Resources */ = {isa = PBXBuildFile; fileRef = 593B6DED28A7F8C100A017FC /* words.json */; };
 		594816D0288C47D70061049B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594816CF288C47D70061049B /* AppDelegate.swift */; };
 		594816D2288C47D70061049B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594816D1288C47D70061049B /* SceneDelegate.swift */; };
 		594816D4288C47D70061049B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594816D3288C47D70061049B /* ViewController.swift */; };
@@ -28,7 +29,6 @@
 		59481719288C8C930061049B /* Keyboard3Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59481717288C8C930061049B /* Keyboard3Cell.swift */; };
 		5948171A288C8C930061049B /* Keyboard3Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59481718288C8C930061049B /* Keyboard3Cell.xib */; };
 		5955DBF1288DBB400083A8BC /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5955DBF0288DBB400083A8BC /* CharacterModel.swift */; };
-		5990A03928A75ACC00011682 /* words.json in Resources */ = {isa = PBXBuildFile; fileRef = 5990A03828A75ACC00011682 /* words.json */; };
 		59D8D623289DDF3C00AF0017 /* KeybardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D8D622289DDF3C00AF0017 /* KeybardModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		590BC91128A764960055C5F8 /* WordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordController.swift; sourceTree = "<group>"; };
+		593B6DED28A7F8C100A017FC /* words.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = words.json; sourceTree = "<group>"; };
 		594816CC288C47D70061049B /* WordGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		594816CF288C47D70061049B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		594816D1288C47D70061049B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,7 +76,6 @@
 		59481717288C8C930061049B /* Keyboard3Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard3Cell.swift; sourceTree = "<group>"; };
 		59481718288C8C930061049B /* Keyboard3Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Keyboard3Cell.xib; sourceTree = "<group>"; };
 		5955DBF0288DBB400083A8BC /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
-		5990A03828A75ACC00011682 /* words.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = words.json; sourceTree = "<group>"; };
 		59D8D622289DDF3C00AF0017 /* KeybardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeybardModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -180,7 +180,7 @@
 				5955DBF0288DBB400083A8BC /* CharacterModel.swift */,
 				59D8D622289DDF3C00AF0017 /* KeybardModel.swift */,
 				590BC91128A764960055C5F8 /* WordController.swift */,
-				5990A03828A75ACC00011682 /* words.json */,
+				593B6DED28A7F8C100A017FC /* words.json */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -290,9 +290,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				594816DF288C47D90061049B /* LaunchScreen.storyboard in Resources */,
-				5990A03928A75ACC00011682 /* words.json in Resources */,
 				5948171A288C8C930061049B /* Keyboard3Cell.xib in Resources */,
 				5948170E288C757B0061049B /* KeyboardCell.xib in Resources */,
+				593B6DEE28A7F8C100A017FC /* words.json in Resources */,
 				594816DC288C47D90061049B /* Assets.xcassets in Resources */,
 				594816D7288C47D70061049B /* Main.storyboard in Resources */,
 				5948170A288C532C0061049B /* GameCell.xib in Resources */,
