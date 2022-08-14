@@ -219,7 +219,7 @@ extension GameViewController: UITableViewDelegate, UITableViewDataSource, Handle
                 refreshRow()
                 completeGame()
             } else {
-                self.showToast(message: "Not A Word", font: .systemFont(ofSize: 12.0))
+                self.showToast(message: "Not A Word", font: .systemFont(ofSize: 15.0))
             }
         }
     }
