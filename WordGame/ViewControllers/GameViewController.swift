@@ -13,6 +13,20 @@ class GameViewController: UIViewController {
     
     var randomInt: Int?
     
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    func createWinHistory(gameResult: String) {
+        let newResult = PlayerStats(context: context)
+        newResult.win = gameResult
+        newResult.date = Date()
+        
+        do {
+            try context.save()
+        } catch {
+            print("error Update")
+        }
+    }
+    
     var data = [
         CharacterModel.WordAttempt.init(word: [
             CharacterModel.CharacterValue(value: "", color: ""),
@@ -99,8 +113,7 @@ class GameViewController: UIViewController {
         keyboardTableView.register(UINib(nibName: "Keyboard2Cell", bundle: nil), forCellReuseIdentifier: "Keyboard2Cell")
         keyboardTableView.register(UINib(nibName: "Keyboard3Cell", bundle: nil), forCellReuseIdentifier: "Keyboard3Cell")
         
-        self.randomInt = Int.random(in: 0..<wordList.count - 1)
-        question = wordList[randomInt!].map { String($0) }
+        assignWord()
         
     }
 }
@@ -257,13 +270,14 @@ extension GameViewController: UITableViewDelegate, UITableViewDataSource, Handle
     private func completeGame() {
         if !isCorrect {
             if attemptCount == 4 {
+                self.createWinHistory(gameResult: "lose")
                 //pop win alert
                 let loseAlert = UIAlertController(title: "You Lose!", message: "The correct word was: \(question.joined())", preferredStyle: .alert)
                 let playAgain = UIAlertAction(title: "Play Again", style: .default, handler:  { (action) -> Void in
                     self.restartGame()
                  })
                 let quit = UIAlertAction(title: "Quit", style: .destructive, handler: { (action) -> Void in
-                    self.dismiss(animated: true, completion: nil)
+                    self.navigationController?.popToRootViewController(animated: true)
                 })
                 loseAlert.addAction(playAgain)
                 loseAlert.addAction(quit)
@@ -274,13 +288,16 @@ extension GameViewController: UITableViewDelegate, UITableViewDataSource, Handle
             }
             
         } else {
+            
+            self.createWinHistory(gameResult: "win")
             //pop win alert
             let winAlert = UIAlertController(title: "Nice One!", message: "You Win!", preferredStyle: .alert)
             let playAgain = UIAlertAction(title: "Play Again", style: .default, handler:  { (action) -> Void in
                 self.restartGame()
              })
             let quit = UIAlertAction(title: "Quit", style: .destructive, handler: { (action) -> Void in
-                self.dismiss(animated: true, completion: nil)
+                self.navigationController?.popToRootViewController(animated: true)
+
             })
             winAlert.addAction(playAgain)
             winAlert.addAction(quit)
@@ -288,9 +305,13 @@ extension GameViewController: UITableViewDelegate, UITableViewDataSource, Handle
         }
     }
     
-    private func restartGame() {
+    private func assignWord() {
         self.randomInt = Int.random(in: 0..<wordList.count - 1)
         question = wordList[randomInt!].map { String($0) }
+    }
+    
+    private func restartGame() {
+        assignWord()
         answer = []
         characterCount = 0
         attemptCount = 0
@@ -357,6 +378,8 @@ extension GameViewController: UITableViewDelegate, UITableViewDataSource, Handle
         ]
         keyboardTableView.reloadData() 
     }
+    
+    
 }
 
 extension GameViewController {

@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5907D54328A9688B009B6DA9 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5907D54228A9688B009B6DA9 /* StatsViewController.swift */; };
 		590BC91228A764960055C5F8 /* WordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590BC91128A764960055C5F8 /* WordController.swift */; };
+		5925214C28A8BFDA001602CF /* PlayerStats+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5925214A28A8BFDA001602CF /* PlayerStats+CoreDataClass.swift */; };
+		5925214D28A8BFDA001602CF /* PlayerStats+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5925214B28A8BFDA001602CF /* PlayerStats+CoreDataProperties.swift */; };
 		593B6DEE28A7F8C100A017FC /* words.json in Resources */ = {isa = PBXBuildFile; fileRef = 593B6DED28A7F8C100A017FC /* words.json */; };
 		594816D0288C47D70061049B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594816CF288C47D70061049B /* AppDelegate.swift */; };
 		594816D2288C47D70061049B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594816D1288C47D70061049B /* SceneDelegate.swift */; };
@@ -29,6 +32,7 @@
 		59481719288C8C930061049B /* Keyboard3Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59481717288C8C930061049B /* Keyboard3Cell.swift */; };
 		5948171A288C8C930061049B /* Keyboard3Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59481718288C8C930061049B /* Keyboard3Cell.xib */; };
 		5955DBF1288DBB400083A8BC /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5955DBF0288DBB400083A8BC /* CharacterModel.swift */; };
+		59856B9328AC9F1900DD76FC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59856B9228AC9F1900DD76FC /* SettingsViewController.swift */; };
 		59D8D623289DDF3C00AF0017 /* KeybardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D8D622289DDF3C00AF0017 /* KeybardModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,7 +54,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5907D54228A9688B009B6DA9 /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		590BC91128A764960055C5F8 /* WordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordController.swift; sourceTree = "<group>"; };
+		5925214A28A8BFDA001602CF /* PlayerStats+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerStats+CoreDataClass.swift"; sourceTree = "<group>"; };
+		5925214B28A8BFDA001602CF /* PlayerStats+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerStats+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		593B6DED28A7F8C100A017FC /* words.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = words.json; sourceTree = "<group>"; };
 		594816CC288C47D70061049B /* WordGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		594816CF288C47D70061049B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +83,7 @@
 		59481717288C8C930061049B /* Keyboard3Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard3Cell.swift; sourceTree = "<group>"; };
 		59481718288C8C930061049B /* Keyboard3Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Keyboard3Cell.xib; sourceTree = "<group>"; };
 		5955DBF0288DBB400083A8BC /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
+		59856B9228AC9F1900DD76FC /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		59D8D622289DDF3C00AF0017 /* KeybardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeybardModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,15 +135,16 @@
 		594816CE288C47D70061049B /* WordGame */ = {
 			isa = PBXGroup;
 			children = (
-				59481704288C4AAE0061049B /* GameViewController.swift */,
+				594816D3288C47D70061049B /* ViewController.swift */,
+				59856B9128AC9EF500DD76FC /* ViewControllers */,
 				59481706288C52770061049B /* cells */,
+				59856B9428ACA1D000DD76FC /* CoreData */,
 				5990A03A28A75E9200011682 /* Models */,
 				594816CF288C47D70061049B /* AppDelegate.swift */,
 				594816D1288C47D70061049B /* SceneDelegate.swift */,
-				594816D3288C47D70061049B /* ViewController.swift */,
 				594816D5288C47D70061049B /* Main.storyboard */,
-				594816DB288C47D90061049B /* Assets.xcassets */,
 				594816DD288C47D90061049B /* LaunchScreen.storyboard */,
+				594816DB288C47D90061049B /* Assets.xcassets */,
 				594816E0288C47D90061049B /* Info.plist */,
 				594816D8288C47D70061049B /* WordGame.xcdatamodeld */,
 			);
@@ -172,6 +181,25 @@
 				59481718288C8C930061049B /* Keyboard3Cell.xib */,
 			);
 			path = cells;
+			sourceTree = "<group>";
+		};
+		59856B9128AC9EF500DD76FC /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				59481704288C4AAE0061049B /* GameViewController.swift */,
+				5907D54228A9688B009B6DA9 /* StatsViewController.swift */,
+				59856B9228AC9F1900DD76FC /* SettingsViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		59856B9428ACA1D000DD76FC /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				5925214A28A8BFDA001602CF /* PlayerStats+CoreDataClass.swift */,
+				5925214B28A8BFDA001602CF /* PlayerStats+CoreDataProperties.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		5990A03A28A75E9200011682 /* Models */ = {
@@ -328,10 +356,14 @@
 				594816D4288C47D70061049B /* ViewController.swift in Sources */,
 				594816D0288C47D70061049B /* AppDelegate.swift in Sources */,
 				594816D2288C47D70061049B /* SceneDelegate.swift in Sources */,
+				59856B9328AC9F1900DD76FC /* SettingsViewController.swift in Sources */,
 				590BC91228A764960055C5F8 /* WordController.swift in Sources */,
+				5925214C28A8BFDA001602CF /* PlayerStats+CoreDataClass.swift in Sources */,
 				59D8D623289DDF3C00AF0017 /* KeybardModel.swift in Sources */,
 				594816DA288C47D70061049B /* WordGame.xcdatamodeld in Sources */,
 				5948170D288C757B0061049B /* KeyboardCell.swift in Sources */,
+				5925214D28A8BFDA001602CF /* PlayerStats+CoreDataProperties.swift in Sources */,
+				5907D54328A9688B009B6DA9 /* StatsViewController.swift in Sources */,
 				59481709288C532C0061049B /* GameCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
