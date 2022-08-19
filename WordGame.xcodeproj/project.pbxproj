@@ -32,7 +32,11 @@
 		59481719288C8C930061049B /* Keyboard3Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59481717288C8C930061049B /* Keyboard3Cell.swift */; };
 		5948171A288C8C930061049B /* Keyboard3Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59481718288C8C930061049B /* Keyboard3Cell.xib */; };
 		5955DBF1288DBB400083A8BC /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5955DBF0288DBB400083A8BC /* CharacterModel.swift */; };
+		597C425628AF3B580036BC95 /* StyleColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597C425528AF3B580036BC95 /* StyleColors.swift */; };
 		59856B9328AC9F1900DD76FC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59856B9228AC9F1900DD76FC /* SettingsViewController.swift */; };
+		59856B9928ACA64000DD76FC /* KeyboardMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59856B9728ACA64000DD76FC /* KeyboardMainCell.swift */; };
+		59856B9A28ACA64000DD76FC /* KeyboardMainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59856B9828ACA64000DD76FC /* KeyboardMainCell.xib */; };
+		59856B9E28ACB0F800DD76FC /* KeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59856B9D28ACB0F800DD76FC /* KeyboardView.xib */; };
 		59D8D623289DDF3C00AF0017 /* KeybardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D8D622289DDF3C00AF0017 /* KeybardModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -83,7 +87,11 @@
 		59481717288C8C930061049B /* Keyboard3Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard3Cell.swift; sourceTree = "<group>"; };
 		59481718288C8C930061049B /* Keyboard3Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Keyboard3Cell.xib; sourceTree = "<group>"; };
 		5955DBF0288DBB400083A8BC /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
+		597C425528AF3B580036BC95 /* StyleColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleColors.swift; sourceTree = "<group>"; };
 		59856B9228AC9F1900DD76FC /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		59856B9728ACA64000DD76FC /* KeyboardMainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardMainCell.swift; sourceTree = "<group>"; };
+		59856B9828ACA64000DD76FC /* KeyboardMainCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyboardMainCell.xib; sourceTree = "<group>"; };
+		59856B9D28ACB0F800DD76FC /* KeyboardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyboardView.xib; sourceTree = "<group>"; };
 		59D8D622289DDF3C00AF0017 /* KeybardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeybardModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,6 +155,7 @@
 				594816DB288C47D90061049B /* Assets.xcassets */,
 				594816E0288C47D90061049B /* Info.plist */,
 				594816D8288C47D70061049B /* WordGame.xcdatamodeld */,
+				597C425528AF3B580036BC95 /* StyleColors.swift */,
 			);
 			path = WordGame;
 			sourceTree = "<group>";
@@ -179,6 +188,9 @@
 				59481714288C88FE0061049B /* Keyboard2Cell.xib */,
 				59481717288C8C930061049B /* Keyboard3Cell.swift */,
 				59481718288C8C930061049B /* Keyboard3Cell.xib */,
+				59856B9728ACA64000DD76FC /* KeyboardMainCell.swift */,
+				59856B9828ACA64000DD76FC /* KeyboardMainCell.xib */,
+				59856B9D28ACB0F800DD76FC /* KeyboardView.xib */,
 			);
 			path = cells;
 			sourceTree = "<group>";
@@ -322,6 +334,8 @@
 				5948170E288C757B0061049B /* KeyboardCell.xib in Resources */,
 				593B6DEE28A7F8C100A017FC /* words.json in Resources */,
 				594816DC288C47D90061049B /* Assets.xcassets in Resources */,
+				59856B9E28ACB0F800DD76FC /* KeyboardView.xib in Resources */,
+				59856B9A28ACA64000DD76FC /* KeyboardMainCell.xib in Resources */,
 				594816D7288C47D70061049B /* Main.storyboard in Resources */,
 				5948170A288C532C0061049B /* GameCell.xib in Resources */,
 				59481716288C88FE0061049B /* Keyboard2Cell.xib in Resources */,
@@ -356,7 +370,9 @@
 				594816D4288C47D70061049B /* ViewController.swift in Sources */,
 				594816D0288C47D70061049B /* AppDelegate.swift in Sources */,
 				594816D2288C47D70061049B /* SceneDelegate.swift in Sources */,
+				597C425628AF3B580036BC95 /* StyleColors.swift in Sources */,
 				59856B9328AC9F1900DD76FC /* SettingsViewController.swift in Sources */,
+				59856B9928ACA64000DD76FC /* KeyboardMainCell.swift in Sources */,
 				590BC91228A764960055C5F8 /* WordController.swift in Sources */,
 				5925214C28A8BFDA001602CF /* PlayerStats+CoreDataClass.swift in Sources */,
 				59D8D623289DDF3C00AF0017 /* KeybardModel.swift in Sources */,

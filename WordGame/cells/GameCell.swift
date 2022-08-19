@@ -82,13 +82,13 @@ class GameCell: UITableViewCell {
     func setColor(colorString: String) -> UIColor {
         switch(colorString) {
         case "green":
-            return .green
+            return UIColor.LetterColor.green
         case "yellow":
-            return .orange
+            return UIColor.LetterColor.yellow
         case "red":
-            return .red
+            return UIColor.LetterColor.wrong
         default:
-            return .lightGray
+            return UIColor.LetterColor.notUsed
         }
     }
     

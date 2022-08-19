@@ -165,14 +165,14 @@
                                 </prototypes>
                             </tableView>
                             <tableView clipsSubviews="YES" contentMode="center" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="X4C-hR-Z8Z">
-                                <rect key="frame" x="10" y="662" width="394" height="200"/>
+                                <rect key="frame" x="2" y="662" width="410" height="200"/>
                                 <color key="backgroundColor" red="0.16862745100000001" green="0.4431372549" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="KeyboardCell" id="WQL-Jz-RCD" customClass="KeyboardCell" customModule="WordGame" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="394" height="44"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="410" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WQL-Jz-RCD" id="8Kl-eX-dZq">
-                                            <rect key="frame" x="0.0" y="0.0" width="394" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="410" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -185,8 +185,8 @@
                             <constraint firstItem="X4C-hR-Z8Z" firstAttribute="top" secondItem="w4b-Nj-3Bq" secondAttribute="bottom" constant="100" id="0hU-Dx-D4Y"/>
                             <constraint firstItem="w4b-Nj-3Bq" firstAttribute="trailing" secondItem="rJZ-XN-rdo" secondAttribute="trailing" id="5Ml-ir-mpP"/>
                             <constraint firstItem="X4C-hR-Z8Z" firstAttribute="bottom" secondItem="rJZ-XN-rdo" secondAttribute="bottom" id="6wk-jh-T9F"/>
-                            <constraint firstItem="X4C-hR-Z8Z" firstAttribute="leading" secondItem="rJZ-XN-rdo" secondAttribute="leading" constant="10" id="B1K-5M-7Io"/>
-                            <constraint firstItem="rJZ-XN-rdo" firstAttribute="trailing" secondItem="X4C-hR-Z8Z" secondAttribute="trailing" constant="10" id="Ri7-MX-iSO"/>
+                            <constraint firstItem="X4C-hR-Z8Z" firstAttribute="leading" secondItem="rJZ-XN-rdo" secondAttribute="leading" constant="2" id="B1K-5M-7Io"/>
+                            <constraint firstItem="rJZ-XN-rdo" firstAttribute="trailing" secondItem="X4C-hR-Z8Z" secondAttribute="trailing" constant="2" id="Ri7-MX-iSO"/>
                             <constraint firstItem="w4b-Nj-3Bq" firstAttribute="leading" secondItem="rJZ-XN-rdo" secondAttribute="leading" id="XZS-Ut-oD1"/>
                             <constraint firstItem="rJZ-XN-rdo" firstAttribute="bottom" secondItem="w4b-Nj-3Bq" secondAttribute="bottom" constant="300" id="fYc-iu-hhd"/>
                             <constraint firstItem="w4b-Nj-3Bq" firstAttribute="top" secondItem="rJZ-XN-rdo" secondAttribute="top" id="zv1-5h-bnP"/>

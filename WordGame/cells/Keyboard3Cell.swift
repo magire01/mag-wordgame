@@ -144,13 +144,13 @@ class Keyboard3Cell: UITableViewCell {
     func setColor(colorString: String) -> UIColor {
         switch(colorString) {
         case "green":
-            return .green
+            return UIColor.LetterColor.green
         case "yellow":
-            return .orange
+            return UIColor.LetterColor.yellow
         case "red":
-            return .red
+            return UIColor.LetterColor.wrong
         case "gray":
-            return .lightGray
+            return UIColor.LetterColor.notUsed
         default:
             return .black
         }
