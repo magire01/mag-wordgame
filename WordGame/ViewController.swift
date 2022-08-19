@@ -56,34 +56,34 @@ class ViewController: UIViewController {
     
     
     // Core Data
-    func getWinHistory() {
-        do {
-            playerStats = try context.fetch(PlayerStats.fetchRequest())
-            DispatchQueue.main.async { [self] in
-                for stats in playerStats {
-                    if let stats = stats as? PlayerStats {
-                        print("stat: \(stats.win)")
-                        print("stat: \(stats.date)")
-                    }
-                }
-            }
-        } catch {
-            //error
-            print("error get")
-        }
-    }
-    
-    func createWinHistory(gameResult: String) {
-        let newResult = PlayerStats(context: context)
-        newResult.win = gameResult
-        newResult.date = Date()
-        
-        do {
-            try context.save()
-        } catch {
-            print("error Update")
-        }
-    }
+//    func getWinHistory() {
+//        do {
+//            playerStats = try context.fetch(PlayerStats.fetchRequest())
+//            DispatchQueue.main.async { [self] in
+//                for stats in playerStats {
+//                    if let stats = stats as? PlayerStats {
+//                        print("stat: \(stats.win)")
+//                        print("stat: \(stats.date)")
+//                    }
+//                }
+//            }
+//        } catch {
+//            //error
+//            print("error get")
+//        }
+//    }
+//    
+//    func createWinHistory(gameResult: String) {
+//        let newResult = PlayerStats(context: context)
+//        newResult.win = gameResult
+//        newResult.date = Date()
+//        
+//        do {
+//            try context.save()
+//        } catch {
+//            print("error Update")
+//        }
+//    }
 
 }
 

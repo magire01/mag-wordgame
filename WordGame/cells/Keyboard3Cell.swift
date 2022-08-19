@@ -63,6 +63,31 @@ class Keyboard3Cell: UITableViewCell {
         }
     }
     
+    @IBOutlet weak var deleteButton: UIButton!{
+        didSet {
+            let deleteImage = UIImage(named: "delete")?.withRenderingMode(.alwaysTemplate)
+            self.deleteButton.imageView?.contentMode = .scaleAspectFit
+            self.deleteButton.setImage(deleteImage, for: .normal)
+            self.deleteButton.backgroundColor = UIColor.LetterColor.delete
+            self.deleteButton.tintColor = .white
+            self.deleteButton.layer.borderWidth = 1
+            self.deleteButton.layer.cornerRadius = 20
+        }
+    }
+    
+    @IBOutlet weak var submitButton: UIButton!{
+        didSet {
+            let submitImage = UIImage(named: "submit")?.withRenderingMode(.alwaysTemplate)
+            self.submitButton.imageView?.contentMode = .scaleAspectFit
+            self.submitButton.setImage(submitImage, for: .normal)
+            self.submitButton.backgroundColor = UIColor.LetterColor.submit
+            self.submitButton.tintColor = .white
+            self.submitButton.layer.borderWidth = 1
+            self.submitButton.layer.cornerRadius = 20
+        }
+    }
+    
+    
     
     @IBAction func deleteTextTouched(_ sender: Any) {
         delegate?.deleteKey()
@@ -144,13 +169,13 @@ class Keyboard3Cell: UITableViewCell {
     func setColor(colorString: String) -> UIColor {
         switch(colorString) {
         case "green":
-            return .green
+            return UIColor.LetterColor.green
         case "yellow":
-            return .orange
+            return UIColor.LetterColor.yellow
         case "red":
-            return .red
+            return UIColor.LetterColor.wrong
         case "gray":
-            return .lightGray
+            return UIColor.LetterColor.notUsed
         default:
             return .black
         }
