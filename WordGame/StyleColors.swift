@@ -15,5 +15,8 @@ extension UIColor {
         static var yellow: UIColor { return UIColor(red: 0.898, green: 0.7765, blue: 0, alpha: 1.0) }
         static var wrong: UIColor { return UIColor(red: 0.6196, green: 0.0431, blue: 0.051, alpha: 1.0) }
         static var notUsed: UIColor { return UIColor(red: 0.4706, green: 0.498, blue: 0.5176, alpha: 1.0) }
+        static var delete: UIColor { return UIColor(red: 0.1608, green: 0.3294, blue: 0.4471, alpha: 1.0)  }
+        static var submit: UIColor { return UIColor(red: 0.1608, green: 0.3294, blue: 0.4471, alpha: 1.0)  }
+
     }
 }
