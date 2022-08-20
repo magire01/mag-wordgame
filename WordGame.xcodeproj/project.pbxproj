@@ -38,6 +38,8 @@
 		59856B9A28ACA64000DD76FC /* KeyboardMainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59856B9828ACA64000DD76FC /* KeyboardMainCell.xib */; };
 		59856B9E28ACB0F800DD76FC /* KeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59856B9D28ACB0F800DD76FC /* KeyboardView.xib */; };
 		59D8D623289DDF3C00AF0017 /* KeybardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D8D622289DDF3C00AF0017 /* KeybardModel.swift */; };
+		59FEF95728B0A04500C2AA12 /* popsound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 59FEF95628B0A04500C2AA12 /* popsound.mp3 */; };
+		59FEF95928B0A2FD00C2AA12 /* deletepop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 59FEF95828B0A2FD00C2AA12 /* deletepop.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +95,8 @@
 		59856B9828ACA64000DD76FC /* KeyboardMainCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyboardMainCell.xib; sourceTree = "<group>"; };
 		59856B9D28ACB0F800DD76FC /* KeyboardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyboardView.xib; sourceTree = "<group>"; };
 		59D8D622289DDF3C00AF0017 /* KeybardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeybardModel.swift; sourceTree = "<group>"; };
+		59FEF95628B0A04500C2AA12 /* popsound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = popsound.mp3; path = ../../Downloads/popsound.mp3; sourceTree = "<group>"; };
+		59FEF95828B0A2FD00C2AA12 /* deletepop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = deletepop.mp3; path = ../../Downloads/deletepop.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +127,8 @@
 		594816C3288C47D70061049B = {
 			isa = PBXGroup;
 			children = (
+				59FEF95628B0A04500C2AA12 /* popsound.mp3 */,
+				59FEF95828B0A2FD00C2AA12 /* deletepop.mp3 */,
 				594816CE288C47D70061049B /* WordGame */,
 				594816E8288C47D90061049B /* WordGameTests */,
 				594816F2288C47D90061049B /* WordGameUITests */,
@@ -330,6 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				594816DF288C47D90061049B /* LaunchScreen.storyboard in Resources */,
+				59FEF95928B0A2FD00C2AA12 /* deletepop.mp3 in Resources */,
 				5948171A288C8C930061049B /* Keyboard3Cell.xib in Resources */,
 				5948170E288C757B0061049B /* KeyboardCell.xib in Resources */,
 				593B6DEE28A7F8C100A017FC /* words.json in Resources */,
@@ -338,6 +345,7 @@
 				59856B9A28ACA64000DD76FC /* KeyboardMainCell.xib in Resources */,
 				594816D7288C47D70061049B /* Main.storyboard in Resources */,
 				5948170A288C532C0061049B /* GameCell.xib in Resources */,
+				59FEF95728B0A04500C2AA12 /* popsound.mp3 in Resources */,
 				59481716288C88FE0061049B /* Keyboard2Cell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

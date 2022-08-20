@@ -6,9 +6,30 @@
 //
 
 import UIKit
+import AVFoundation
 
 class GameViewController: UIViewController {
+    var player = AVAudioPlayer()
     
+    func keyboardSound() {
+        let audioPath = Bundle.main.path(forResource: "popsound", ofType: "mp3")
+        do {
+            try player = AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioPath!), fileTypeHint: nil)
+            player.play()
+        } catch {
+            print("error sound")
+        }
+    }
+    func deleteSound() {
+        let audioPath = Bundle.main.path(forResource: "deletepop", ofType: "mp3")
+        do {
+            try player = AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioPath!), fileTypeHint: nil)
+            player.play()
+        } catch {
+            print("error sound")
+        }
+    }
+
     var wordList: [String] = WordController().wordModel ?? []
     
     var randomInt: Int?
@@ -200,6 +221,7 @@ extension GameViewController: UITableViewDelegate, UITableViewDataSource, Handle
     
     func updateKeyboard1(with letter: String) {
         if characterCount < 5 {
+            keyboardSound()
             data[attemptCount].word[characterCount].value = letter
             characterCount = characterCount + 1
             answer.append(letter.lowercased())
@@ -214,6 +236,7 @@ extension GameViewController: UITableViewDelegate, UITableViewDataSource, Handle
     
     func deleteKey() {
         if characterCount > 0 {
+            deleteSound()
             characterCount -= 1
             data[attemptCount].word[characterCount].value = ""
             answer.remove(at: characterCount)
